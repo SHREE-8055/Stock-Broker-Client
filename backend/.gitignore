@@ -1,0 +1,27 @@
+# ── Environment / secrets ─────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Node ──────────────────────────────────────────────────────
+node_modules/
+package-lock.json   # commit this if you want reproducible installs; remove line if so
+
+# ── Logs ──────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+
+# ── Runtime artifacts ─────────────────────────────────────────
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ── Coverage / test output ────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

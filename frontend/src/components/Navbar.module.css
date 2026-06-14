@@ -1,0 +1,98 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 60px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand { display: flex; align-items: center; gap: 0.5rem; }
+.brandIcon { font-size: 1.4rem; }
+.brandName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.3px;
+}
+
+.center { display: flex; align-items: center; gap: 0.5rem; }
+
+.statusDot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: background 0.3s;
+}
+.statusDot.connected    { background: var(--green); box-shadow: 0 0 6px var(--green); }
+.statusDot.connecting   { background: var(--yellow); animation: pulse 1s infinite; }
+.statusDot.disconnected { background: var(--red); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.statusLabel { font-size: 0.8rem; color: var(--muted); }
+
+.right { display: flex; align-items: center; gap: 1rem; }
+
+/* Cash balance pill */
+.balance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+  background: rgba(88, 166, 255, 0.08);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.25rem 0.75rem;
+}
+
+.balanceLabel {
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.balanceValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.userInfo { display: flex; align-items: center; gap: 0.5rem; }
+
+.avatar {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #0d1117;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userName { font-size: 0.88rem; font-weight: 500; color: var(--text); }
+
+.logoutBtn {
+  padding: 0.38rem 0.8rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.logoutBtn:hover { border-color: var(--red); color: var(--red); }

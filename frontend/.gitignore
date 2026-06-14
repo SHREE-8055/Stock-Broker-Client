@@ -1,0 +1,30 @@
+# ── Node ──────────────────────────────────────────────────────
+node_modules/
+package-lock.json   # commit this if you want reproducible installs; remove line if so
+
+# ── Vite build output ─────────────────────────────────────────
+dist/
+dist-ssr/
+
+# ── Vite cache ────────────────────────────────────────────────
+.vite/
+node_modules/.vite/
+
+# ── Environment / secrets ─────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+
+# ── TypeScript build info ─────────────────────────────────────
+*.tsbuildinfo
+
+# ── Test / coverage output ────────────────────────────────────
+coverage/
+
+# ── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
