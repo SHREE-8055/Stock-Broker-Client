@@ -1,4 +1,6 @@
-const BASE = '/api/trade';
+import { getApi } from '../config/remote';
+
+const BASE = getApi('/api/trade');
 
 export async function getPortfolio(email) {
   const res = await fetch(`${BASE}/portfolio?email=${encodeURIComponent(email)}`);

@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { subscribe, unsubscribe, getSupportedStocks } from '../api/stocks';
 import useWebSocket    from '../hooks/useWebSocket';
+import { WS_URL }      from '../config/remote';
 import StockCard       from '../components/StockCard';
 import SubscribePanel  from '../components/SubscribePanel';
 import Navbar          from '../components/Navbar';
@@ -9,7 +10,8 @@ import PortfolioTable  from '../components/PortfolioTable';
 import StockChartModal from '../components/StockChartModal';
 import styles from './DashboardPage.module.css';
 
-const WS_URL      = `ws://${window.location.hostname}:5000`;
+// `WS_URL` resolved from Vite env `VITE_WS_BASE` or derived from `VITE_API_BASE`.
+// Falls back to ws://<hostname>:5000 for local dev.
 const MAX_HISTORY = 60; // keep last 60 seconds of ticks
 
 function nowLabel() {

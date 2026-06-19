@@ -1,4 +1,6 @@
-const BASE = '/api/stocks';
+import { getApi } from '../config/remote';
+
+const BASE = getApi('/api/stocks');
 
 export async function getSupportedStocks() {
   const res = await fetch(BASE);

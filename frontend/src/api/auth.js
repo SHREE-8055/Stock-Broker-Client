@@ -1,4 +1,6 @@
-const BASE = '/api/auth';
+import { getApi } from '../config/remote';
+
+const BASE = getApi('/api/auth');
 
 export async function register(name, email, password) {
   const res = await fetch(`${BASE}/register`, {
