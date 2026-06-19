@@ -1,5 +1,11 @@
 // Helper for API and WebSocket base URLs. Respects Vite env vars when set.
-const API_BASE = import.meta.env.VITE_API_BASE || '';
+// NOTE: In production you should set `VITE_API_BASE` and `VITE_WS_BASE`
+// in your hosting provider (e.g. Vercel). A fallback is provided here
+// to help quick fixes when those env vars are missing.
+const FALLBACK_API = 'https://stock-broker-client-1-0hff.onrender.com';
+const FALLBACK_WS  = 'wss://stock-broker-client-1-0hff.onrender.com';
+
+const API_BASE = import.meta.env.VITE_API_BASE || FALLBACK_API;
 const WS_BASE  = import.meta.env.VITE_WS_BASE || '';
 
 function getApi(path) {
@@ -19,7 +25,7 @@ function resolveWs() {
       // fallthrough
     }
   }
-  return `ws://${window.location.hostname}:5000`;
+  return FALLBACK_WS;
 }
 
 const WS_URL = resolveWs();
